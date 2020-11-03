@@ -86,7 +86,7 @@ export class NgCastComponent implements OnInit, AfterViewChecked {
   ngAfterViewChecked() { 
     setInterval(() => {
       this.getPaused();
-    }, 500);
+    }, 2000);
   }
 
   onPlayerReady(api: VgAPI) {

@@ -3,6 +3,7 @@
         <vg-player *ngIf="!imageOffline" [style.height.px]="815" (onPlayerReady)="onPlayerReady($event)"
             (mousemove)="showVideoControls()" (mouseleave)="hideVideoControls()" (mousestop)="hideVideoControls()">
             <vg-overlay-play></vg-overlay-play>
+            <div class=label id="playerstate"></div>
             <video muted autoplay #media [vgMedia]="media" [vgDash]="video.url" crossorigin id="video_element">
             </video>
             <div id="media_control" class="video-controls">

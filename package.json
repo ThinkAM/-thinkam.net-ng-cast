@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "@thinkam.net/ng-cast",
-  "version": "0.4.17",
+  "version": "0.5.0",
   "ngPackage": {
     "lib": {
       "entryFile": "index.ts",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ThinkAM/ngCast.git"
+    "url": "git+https://github.com/ThinkAM/-thinkam.net-ng-cast.git"
   },
   "keywords": [
     "chromecast",
@@ -36,9 +36,9 @@
   "author": "Fabien Zibi & Felipe de Almeida",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ThinkAM/ngCast/issues"
+    "url": "https://github.com/ThinkAM/-thinkam.net-ng-cast/issues"
   },
-  "homepage": "https://github.com/ThinkAM/ngCast#readme",
+  "homepage": "https://github.com/ThinkAM/-thinkam.net-ng-cast#readme",
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1001.5",
     "@angular/cli": "^10.2.0",

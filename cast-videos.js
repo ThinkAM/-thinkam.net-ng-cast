@@ -369,8 +369,8 @@ CastPlayer.prototype.setupLocalPlayer = () => {
 
   playerTarget.updateDisplayMessage = function () {
     document.getElementById('playerstate').style.display = 'none';
-    document.getElementById('playerstatebg').style.display = 'none';
-    document.getElementById('video_image_overlay').style.display = 'none';
+    // document.getElementById('playerstatebg').style.display = 'none';
+    // document.getElementById('video_image_overlay').style.display = 'none';
   };
 
   playerTarget.setVolume = function (volumeSliderPosition) {
@@ -401,7 +401,7 @@ CastPlayer.prototype.setupLocalPlayer = () => {
 
   castPlayer.playerHandler.setVolume(DEFAULT_VOLUME * FULL_VOLUME_HEIGHT);
 
-  castPlayer.showFullscreenButton();
+//  castPlayer.showFullscreenButton();
 
   if (castPlayer.currentMediaTime > 0) {
     castPlayer.playerHandler.play();
@@ -505,8 +505,8 @@ CastPlayer.prototype.setupRemotePlayer = function () {
 
   playerTarget.updateDisplayMessage = function () {
       document.getElementById('playerstate').style.display = 'block';
-      document.getElementById('playerstatebg').style.display = 'block';
-      document.getElementById('video_image_overlay').style.display = 'block';
+      // document.getElementById('playerstatebg').style.display = 'block';
+      // document.getElementById('video_image_overlay').style.display = 'block';
       document.getElementById('playerstate').innerHTML =
           castPlayer.mediaContents[ castPlayer.currentMediaIndex]['title'] + ' ' +
           castPlayer.playerState + ' on ' + castSession.getCastDevice().friendlyName;
@@ -564,7 +564,7 @@ CastPlayer.prototype.setupRemotePlayer = function () {
   p.style.height = currentVolume + 'px';
   p.style.marginTop = -currentVolume + 'px';
 
-  castPlayer.hideFullscreenButton();
+  //castPlayer.hideFullscreenButton();
 
   castPlayer.playerHandler.play();
 };
@@ -573,10 +573,10 @@ CastPlayer.prototype.setupRemotePlayer = function () {
  * Callback when media is loaded in local player
  */
 CastPlayer.prototype.onMediaLoadedLocally = function () {
-  var localPlayer = document.getElementById('video_element');
-  localPlayer.currentTime = castPlayer.currentMediaTime;
+  // var localPlayer = document.getElementById('video_element');
+  // localPlayer.currentTime = castPlayer.currentMediaTime;
 
-  castPlayer.playerHandler.loaded();
+  // castPlayer.playerHandler.loaded();
 };
 
 /**
