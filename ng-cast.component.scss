@@ -10,6 +10,10 @@
       }
   }
 
+  vg-player {
+    height: 100% !important;
+  }
+
   .hidden {
       display: none;
   }
@@ -121,7 +125,7 @@
 
       .video-control-paused {
           position: absolute;
-          left: 1vw;
+          left: 10px;
           bottom: 8px;
           z-index: 1000;
       }
@@ -169,7 +173,7 @@
       display: block;
       position: absolute;
       top: 10px;
-      margin-left: 5vw;
+      margin-left: 50px;
       font-size: 12px;
       padding: 3px;
       content: attr(data-title);
@@ -368,6 +372,7 @@ body {
   font-size: 30px;
   font-weight: bold;
   font-family: 'Roboto', "Open Sans", "Verdana", Georgia, Serif;
+  width: 100%;
 }
 
 #media_subtitle {
