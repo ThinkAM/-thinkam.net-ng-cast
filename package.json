@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "@thinkam.net/ng-cast",
-  "version": "0.5.3",
+  "version": "0.5.9",
   "ngPackage": {
     "lib": {
       "entryFile": "index.ts",
@@ -52,6 +52,5 @@
     "videogular2": "^7.0.1",
     "wrench": "^1.5.9"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

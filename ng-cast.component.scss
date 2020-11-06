@@ -394,10 +394,10 @@ body {
       width: 400px;
     }
     #progress {
-      width: 420px;
+      width: 400px;
     }
     #progress_indicator {
-      margin: 16px 0 10px -420px;
+      margin: 16px 0 10px -400px;
     }
   }
 
@@ -424,10 +424,10 @@ body {
       width: 300px;
     }
     #progress {
-      width: 320px;
+      width: 300px;
     }
     #progress_indicator {
-      margin: 16px 0 10px -320px;
+      margin: 16px 0 10px -300px;
     }
   }
 
@@ -531,7 +531,7 @@ body {
 }
 
 #progress {
-  margin: 20px 0px 10px -620px;
+  margin: 20px 0px 10px -600px;
   cursor: pointer;
   float: left;
   width: 1px;
@@ -542,7 +542,7 @@ body {
 
 #progress_indicator {
   cursor: pointer;
-  margin: 16px 0px 10px -620px;
+  margin: 16px 0px 10px -600px;
   float: left;
   width: 6px;
   height: 18px;

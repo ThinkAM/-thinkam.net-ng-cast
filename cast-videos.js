@@ -7,7 +7,7 @@ const MEDIA_SOURCE_ROOT = '';
  * Width of progress bar in pixel
  * @const
  */
-var PROGRESS_BAR_WIDTH = 600;
+var PROGRESS_BAR_WIDTH = 620;
 
 /** @const {number} Time in milliseconds for minimal progress update */
 var TIMER_STEP = 1000;
@@ -458,8 +458,8 @@ CastPlayer.prototype.setupRemotePlayer = function () {
           castPlayer.remotePlayerController.playOrPause();
       }
 
-      var vi = document.getElementById('video_image');
-      vi.style.display = 'block';
+      // var vi = document.getElementById('video_image');
+      // vi.style.display = 'block';
       var localPlayer = document.getElementById('video_element');
       localPlayer.style.display = 'none';
   }.bind(castPlayer);
@@ -573,10 +573,10 @@ CastPlayer.prototype.setupRemotePlayer = function () {
  * Callback when media is loaded in local player
  */
 CastPlayer.prototype.onMediaLoadedLocally = function () {
-  // var localPlayer = document.getElementById('video_element');
-  // localPlayer.currentTime = castPlayer.currentMediaTime;
+  var localPlayer = document.getElementById('video_element');
+  castPlayer.currentMediaTime = localPlayer.currentTime;
 
-  // castPlayer.playerHandler.loaded();
+  castPlayer.playerHandler.loaded();
 };
 
 /**
@@ -591,8 +591,8 @@ CastPlayer.prototype.selectMedia = function (mediaIndex) {
   castPlayer.playerHandler.currentMediaInfo = undefined;
 
   // Set video image
-  var vi = document.getElementById('video_image');
-  vi.src = MEDIA_SOURCE_ROOT + castPlayer.mediaContents[mediaIndex]['thumb'];
+  // var vi = document.getElementById('video_image');
+  // vi.src = MEDIA_SOURCE_ROOT + castPlayer.mediaContents[mediaIndex]['thumb'];
 
   // Reset progress bar
   var pi = document.getElementById('progress_indicator');
