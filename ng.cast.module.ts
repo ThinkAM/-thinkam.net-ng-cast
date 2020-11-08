@@ -9,6 +9,8 @@ import { VgStreamingModule } from 'videogular2/compiled/streaming';
 import { VgBufferingModule } from 'videogular2/compiled/buffering';
 import { VgOverlayPlayModule } from 'videogular2/compiled/overlay-play';
 
+const CastPlayer: any = require('cast-videos');
+
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   imports: [
@@ -18,6 +20,7 @@ import { VgOverlayPlayModule } from 'videogular2/compiled/overlay-play';
     VgStreamingModule,
     VgBufferingModule,
     VgOverlayPlayModule,
+    CastPlayer
   ],
   exports: [NgCastComponent],
   providers: [NgCastService],

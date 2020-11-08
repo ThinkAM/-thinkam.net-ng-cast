@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "@thinkam.net/ng-cast",
-  "version": "0.5.10",
+  "version": "0.5.16",
   "ngPackage": {
     "lib": {
       "entryFile": "index.ts",
@@ -11,7 +11,8 @@
         "videogular2/compiled/streaming": "VgStreamingModule",
         "videogular2/compiled/buffering": "VgBufferingModule",
         "videogular2/compiled/overlay-play": "VgOverlayPlayModule",
-        "videogular2/compiled/src/streaming/vg-dash/vg-dash": "VgDASH"
+        "videogular2/compiled/src/streaming/vg-dash/vg-dash": "VgDASH",
+        "cast-videos": "CastPlayer"
       }
     }
   },
@@ -50,7 +51,8 @@
     "typescript": "^4.0.5",
     "moment": "^2.24.0",
     "videogular2": "^7.0.1",
-    "wrench": "^1.5.9"
+    "wrench": "^1.5.9",
+    "cast-videos": "0.0.2"
   },
   "dependencies": {}
 }
