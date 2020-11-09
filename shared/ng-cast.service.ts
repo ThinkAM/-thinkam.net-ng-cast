@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Subject } from 'rxjs';
 
-declare global {
-  var CastPlayer: any;
-}
+const castVideos: any = require('cast-videos');
 
 @Injectable()
 export class NgCastService {
@@ -17,8 +15,8 @@ export class NgCastService {
   };
 
   constructor() {
-    if (globalThis.CastPlayer)
-      globalThis.CastPlayer.mediaJSON = {
+    if (castVideos)
+      castVideos.mediaJSON = {
         categories: []
       };
   }
@@ -66,22 +64,22 @@ export class NgCastService {
     script.setAttribute('src', 'https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1');
     window['document'].body.appendChild(script);
 
-    if (globalThis.CastPlayer && 
-        globalThis.CastPlayer.mediaJSON && 
-        globalThis.CastPlayer.mediaJSON.categories)
-      globalThis.CastPlayer.mediaJSON.categories = categories;
+    if (castVideos && 
+        castVideos.mediaJSON && 
+        castVideos.mediaJSON.categories)
+      castVideos.mediaJSON.categories = categories;
     
-    if (globalThis.CastPlayer)
-      return globalThis.CastPlayer.addMediaContents();
+    if (castVideos)
+      return castVideos.CastPlayer.prototype.addMediaContents(categories);
     else 
       return;
   };
 
   initialize(mediaContents: any): void {
-    if (mediaContents && globalThis.CastPlayer) {
-      globalThis.CastPlayer.initializeUI();
-      globalThis.CastPlayer.setupLocalPlayer();
-      globalThis.CastPlayer.initializeCastPlayer();
+    if (mediaContents && castVideos) {
+      castVideos.CastPlayer.prototype.initializeUI();
+      castVideos.CastPlayer.prototype.setupLocalPlayer();
+      castVideos.CastPlayer.prototype.initializeCastPlayer();
     }
   }
 
@@ -103,8 +101,8 @@ export class NgCastService {
 
   setCasting(value: any) {
     this.status.casting = value;
-    if (globalThis.CastPlayer)
-      globalThis.CastPlayer.setupRemotePlayer();
+    if (castVideos)
+      castVideos.CastPlayer.prototype.setupRemotePlayer();
   }
 
   getStatus() {

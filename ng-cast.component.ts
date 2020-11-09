@@ -84,7 +84,7 @@ export class NgCastComponent implements OnInit, AfterViewChecked {
   }
 
   ngAfterViewChecked() { 
-    setInterval(() => {
+    setTimeout(() => {
       this.getPaused();
     }, 2000);
   }
