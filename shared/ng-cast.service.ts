@@ -17,9 +17,10 @@ export class NgCastService {
   };
 
   constructor() {
-    globalThis.CastPlayer.mediaJSON = {
-      categories: []
-    };
+    if (globalThis.CastPlayer)
+      globalThis.CastPlayer.mediaJSON = {
+        categories: []
+      };
   }
 
   initializeCastApi() {
@@ -65,15 +66,19 @@ export class NgCastService {
     script.setAttribute('src', 'https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1');
     window['document'].body.appendChild(script);
 
-    if (globalThis.CastPlayer.mediaJSON && 
+    if (globalThis.CastPlayer && 
+        globalThis.CastPlayer.mediaJSON && 
         globalThis.CastPlayer.mediaJSON.categories)
       globalThis.CastPlayer.mediaJSON.categories = categories;
-
-    return globalThis.CastPlayer.addMediaContents();
+    
+    if (globalThis.CastPlayer)
+      return globalThis.CastPlayer.addMediaContents();
+    else 
+      return;
   };
 
   initialize(mediaContents: any): void {
-    if (mediaContents) {
+    if (mediaContents && globalThis.CastPlayer) {
       globalThis.CastPlayer.initializeUI();
       globalThis.CastPlayer.setupLocalPlayer();
       globalThis.CastPlayer.initializeCastPlayer();
@@ -98,7 +103,8 @@ export class NgCastService {
 
   setCasting(value: any) {
     this.status.casting = value;
-    globalThis.CastPlayer.setupRemotePlayer();
+    if (globalThis.CastPlayer)
+      globalThis.CastPlayer.setupRemotePlayer();
   }
 
   getStatus() {
