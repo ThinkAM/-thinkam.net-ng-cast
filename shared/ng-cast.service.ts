@@ -65,7 +65,9 @@ export class NgCastService {
     script.setAttribute('src', 'https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1');
     window['document'].body.appendChild(script);
 
-    globalThis.CastPlayer.mediaJSON.categories = categories;
+    if (globalThis.CastPlayer.mediaJSON && 
+        globalThis.CastPlayer.mediaJSON.categories)
+      globalThis.CastPlayer.mediaJSON.categories = categories;
 
     return globalThis.CastPlayer.addMediaContents();
   };
