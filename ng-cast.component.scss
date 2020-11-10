@@ -382,67 +382,6 @@ body {
   width: 100%;
 }
 
-
-/* On screens that are 992px or less, set the background color to blue */
-@media screen and (max-width: 992px) {
-  #media_title {
-    font-size: 20px;
-  }
-
-  #footer_content {
-    width: 300px;
-    margin: 80px;
-    font-size: 9px;
-  }
-
-  #media_desc {
-    font-size: 9px;
-    #progress_bg {
-      width: 400px;
-    }
-    #progress {
-      width: 400px;
-    }
-    #progress_indicator {
-      margin: 16px 0 10px -380px;
-    }
-  }
-
-  #media_subtitle {
-    font-size: 11px;
-  }
-}
-
-/* On screens that are 600px or less, set the background color to olive */
-@media screen and (max-width: 640px) {
-  #media_title {
-    font-size: 15px;
-  }
-
-  #footer_content {
-    width: 200px;
-    margin: 60px;
-    font-size: 7px;
-  }
-
-  #media_desc {
-    font-size: 6px;
-    #progress_bg {
-      width: 300px;
-    }
-    #progress {
-      width: 300px;
-    }
-    #progress_indicator {
-      margin: 16px 0 10px -280px;
-    }
-  }
-
-  #media_subtitle {
-    font-size: 12px;
-  }
-}
-
 #media_subtitle {
   float: left;
   margin: 13px 0px 0px 30px;
@@ -565,6 +504,66 @@ body {
   background-color: white;
   height: 10px;
   background-repeat: repeat-x;
+}
+
+@media screen and (max-width: 992px) {
+  #media_title {
+    font-size: 20px;
+  }
+
+  #footer_content {
+    width: 300px;
+    margin: 80px;
+    font-size: 9px;
+  }
+
+  #media_desc {
+    font-size: 9px;
+    #progress_bg {
+      width: 400px;
+    }
+    #progress {
+      width: 400px;
+      margin: 20px 0px 10px -400px;
+    }
+    #progress_indicator {
+      margin: 16px 0 10px -380px;
+    }
+  }
+
+  #media_subtitle {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #media_title {
+    font-size: 15px;
+  }
+
+  #footer_content {
+    width: 200px;
+    margin: 60px;
+    font-size: 7px;
+  }
+
+  #media_desc {
+    font-size: 6px;
+    #progress_bg {
+      width: 300px;
+    }
+    #progress {
+      width: 300px;
+      margin: 20px 0px 10px -300px;
+    }
+    #progress_indicator {
+      margin: 16px 0 10px -280px;
+    }
+  }
+
+  #media_subtitle {
+    font-size: 12px;
+  }
 }
 
 #castbutton {
