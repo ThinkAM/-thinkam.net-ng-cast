@@ -1,11 +1,34 @@
 <div *ngIf="!imageOffline && !premium">
     <div id="main_video">
-        <vg-player *ngIf="!imageOffline" [style.height.px]="815" (onPlayerReady)="onPlayerReady($event)"
-            (mousemove)="showVideoControls()" (mouseleave)="hideVideoControls()" (mousestop)="hideVideoControls()">
+        <vg-player 
+            *ngIf="!imageOffline" 
+            [style.height.px]="815" 
+            (onPlayerReady)="onPlayerReady($event)"
+            (mousemove)="showVideoControls()" 
+            (mouseleave)="hideVideoControls()" 
+            (mousestop)="hideVideoControls()">
             <div class=label id="playerstate"></div>
-            <video muted autoplay #media [vgMedia]="media" [vgDash]="video.url" crossorigin id="video_element">
+            <video 
+                [ngClass]="{
+                    'nocursor': isHidden,
+                    'cursor': isShow
+                }"
+                muted 
+                autoplay 
+                #media 
+                [vgMedia]="media" 
+                [vgDash]="video.url" 
+                crossorigin 
+                id="video_element"
+            >
             </video>
-            <div id="media_control" class="video-controls">
+            <div 
+                id="media_control" 
+                [ngClass]="{
+                    'hidden': isHidden,
+                    'show': isShow
+                }"
+                class="video-controls">
                 <google-cast-launcher id="castbutton"></google-cast-launcher>
                 <div id="audio_bg"></div>
                 <div id="audio_bg_track"></div>
@@ -14,10 +37,14 @@
                 <div id="audio_on"></div>
                 <div id="audio_off"></div>
             </div>
-            <div *ngIf="!imageOffline" class="video-controls" [ngClass]="{
+            <div 
+                *ngIf="!imageOffline" 
+                class="video-controls" 
+                [ngClass]="{
                   'hidden': isHidden,
                   'show': isShow
-              }" id="video-controls">
+                }" 
+                id="video-controls">
                 <div class="video-progress">
                     <progress id="progress-bar" value="100" min="0"></progress>
                     <input class="seek" id="seek" value="99.5" min="0" type="range" step="1">
