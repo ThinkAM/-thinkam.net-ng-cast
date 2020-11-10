@@ -414,7 +414,7 @@ body {
 }
 
 /* On screens that are 600px or less, set the background color to olive */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   #media_title {
     font-size: 15px;
   }
@@ -439,7 +439,7 @@ body {
   }
 
   #media_subtitle {
-    font-size: 9px;
+    font-size: 12px;
   }
 }
 
