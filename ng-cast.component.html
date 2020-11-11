@@ -100,13 +100,14 @@
 </div>
 <div *ngIf="!imageOffline" id="media_info">
     <div id="media_title">
+        {{video.name}}
     </div>
     <div id="media_desc">
         <div id="progress_bg"></div>
         <div id="progress"></div>
         <div id="duration">00:00:00</div>
     </div>
-    <div id="media_subtitle">
+    <div id="media_subtitle" [innerHTML]="video.description">
     </div>
 </div>
 

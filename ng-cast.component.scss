@@ -384,7 +384,6 @@ body {
 
 #media_subtitle {
   float: left;
-  margin: 13px 0px 0px 30px;
   padding: 0px;
   font-size: 18px;
   font-family: 'Roboto', "Open Sans", "Verdana", Georgia, Serif;
@@ -486,16 +485,6 @@ body {
   background-color: #27e7b9;
 }
 
-#progress_indicator {
-  cursor: pointer;
-  margin: 16px 0px 10px -580px;
-  float: left;
-  width: 6px;
-  height: 18px;
-  z-index: 1000;
-  background-color: var(--youtube-red);
-}
-
 #progress_bg {
   margin: 20px 0px 10px 0px;
   cursor: pointer;
@@ -526,9 +515,6 @@ body {
       width: 400px;
       margin: 20px 0px 10px -400px;
     }
-    #progress_indicator {
-      margin: 16px 0 10px -380px;
-    }
   }
 
   #media_subtitle {
@@ -555,9 +541,6 @@ body {
     #progress {
       width: 300px;
       margin: 20px 0px 10px -300px;
-    }
-    #progress_indicator {
-      margin: 16px 0 10px -280px;
     }
   }
 
@@ -683,9 +666,9 @@ body {
   color: black;
   width: 60px;
   height: 32px;
-  margin: 18px 15px 10px 15px;
   display: block;
   font-size: 12px;
+  width: 100%;
 }
 
 div.imageSub { position: relative; }
