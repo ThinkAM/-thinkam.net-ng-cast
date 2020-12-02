@@ -12,12 +12,14 @@
                 [ngClass]="{
                     'nocursor': isHidden,
                     'cursor': isShow
-                }"
-                muted 
-                autoplay 
+                }" 
+                preload="metadata"
                 #media 
-                [vgMedia]="media" 
-                [vgDash]="video.url" 
+                [vgMedia]="media"
+                [vgHls]="video.url"
+                muted
+                playsinline 
+                autoplay
                 crossorigin 
                 id="video_element"
             >
