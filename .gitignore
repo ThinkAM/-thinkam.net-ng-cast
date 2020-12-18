@@ -1,3 +1,6 @@
+.gitignore
+/node_modules
+
 # Logs
 logs
 *.log
@@ -29,7 +32,7 @@ dist
 package.thinkam.json
 
 # Dependency directories
-node_modules
+touch .gitignore && echo "node_modules/" >> .gitignore && git rm -r --cached node_modules ; git status 
 jspm_packages
 
 # Optional npm cache directory

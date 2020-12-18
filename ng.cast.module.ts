@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { NgCastComponent } from './ng-cast.component';
 import { NgCastService } from './shared/ng-cast.service';
 
-import { VgCoreModule } from 'videogular2/compiled/core';
-import { VgControlsModule } from 'videogular2/compiled/controls';
-import { VgStreamingModule } from 'videogular2/compiled/streaming';
-import { VgBufferingModule } from 'videogular2/compiled/buffering';
-import { VgOverlayPlayModule } from 'videogular2/compiled/overlay-play';
+import {VgCoreModule} from '@videogular/ngx-videogular/core';
+import {VgControlsModule} from '@videogular/ngx-videogular/controls';
+import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
+import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
+import { VgStreamingModule } from '@videogular/ngx-videogular/streaming';
 
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
@@ -15,9 +15,9 @@ import { VgOverlayPlayModule } from 'videogular2/compiled/overlay-play';
     CommonModule,
     VgCoreModule,
     VgControlsModule,
-    VgStreamingModule,
     VgBufferingModule,
-    VgOverlayPlayModule
+    VgOverlayPlayModule,
+    VgStreamingModule
   ],
   exports: [NgCastComponent],
   providers: [NgCastService],
