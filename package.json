@@ -1,18 +1,16 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "@thinkam.net/ng-cast",
-  "version": "0.5.47",
+  "version": "0.6.0",
   "ngPackage": {
     "lib": {
       "entryFile": "index.ts",
       "umdModuleIds": {
-        "@videogular/ngx-videogular/core": "VgCoreModule",
+        "@videogular/ngx-videogular/core": "VgApiService, BitrateOptions, VgCoreModule",
         "@videogular/ngx-videogular/controls": "VgControlsModule",
         "@videogular/ngx-videogular/buffering": "VgBufferingModule",
         "@videogular/ngx-videogular/overlay-play": "VgOverlayPlayModule",
-        "@videogular/ngx-videogular/streaming": "VgStreamingModule",
-        "videogular2/compiled/src/streaming/vg-dash/vg-dash": "VgDASH",
-        "videogular2/compiled/core": "VgAPI, BitrateOption"
+        "@videogular/ngx-videogular/streaming": "VgStreamingModule, VgDashDirective"
       }
     }
   },

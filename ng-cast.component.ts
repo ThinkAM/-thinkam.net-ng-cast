@@ -2,9 +2,8 @@ import { Component, Input, OnInit, ViewChild, ElementRef, AfterViewChecked } fro
 
 import { NgCastService } from './shared/ng-cast.service';
 
-import { VgDASH } from 'videogular2/compiled/src/streaming/vg-dash/vg-dash';
-import { IDRMLicenseServer } from 'videogular2/compiled/src/streaming/streaming';
-import { VgAPI, BitrateOption } from 'videogular2/compiled/core';
+import { VgDashDirective } from '@videogular/ngx-videogular/streaming';
+import { VgApiService, BitrateOptions, IDRMLicenseServer } from '@videogular/ngx-videogular/core';
 
 import { ScheduleDto } from './dto/schedule-dto';
 
@@ -24,7 +23,7 @@ export interface IMediaStream {
   ]
 })
 export class NgCastComponent implements OnInit, AfterViewChecked {
-  @ViewChild(VgDASH, { static: false }) vgDash!: VgDASH;
+  @ViewChild(VgDashDirective, { static: false }) vgDash!: VgDashDirective;
   @ViewChild('media', { static: false }) media!: ElementRef<HTMLVideoElement>;
 
   castingStatus: any;
@@ -41,7 +40,7 @@ export class NgCastComponent implements OnInit, AfterViewChecked {
     source: 'http://livesim.dashif.org/livesim/testpic_2s/Manifest.mpd'
   };
 
-  api: VgAPI = new VgAPI();
+  api: VgApiService = new VgApiService();
 
   @Input() isDebug = false;
 
@@ -89,13 +88,13 @@ export class NgCastComponent implements OnInit, AfterViewChecked {
     }, 2000);
   }
 
-  onPlayerReady(api: VgAPI) {
+  onPlayerReady(api: VgApiService) {
     this.api = api;
 
     this.api.getDefaultMedia().subscriptions.ended.subscribe(this.nextVideo.bind(this));
   }
 
-  setBitrate(option: BitrateOption) {
+  setBitrate(option: BitrateOptions) {
     switch (this.currentStream.type) {
       case 'dash':
         this.vgDash.setBitrate(option);
