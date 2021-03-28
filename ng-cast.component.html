@@ -1,6 +1,7 @@
 <div *ngIf="!imageOffline && !premium">
     <div id="main_video">
         <vg-player 
+            id="videoContainer"
             *ngIf="!imageOffline" 
             [style.height.px]="815" 
             (onPlayerReady)="onPlayerReady($event)"
